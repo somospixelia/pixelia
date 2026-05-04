@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIXELIA — Inteligencia Visual · Querétaro</title>
+<meta name="description" content="Estudio boutique de inteligencia visual en Zibatá, Querétaro. Fotografía profesional, digitalización de alta fidelidad y contenido IA con HeyGen.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --o: #D8500A;
+  --bk: #17120B;
+  --wh: #F7EBDF;
+  --wh2: #EDE0CE;
+  --sf: #8A6A5A;
+  --lk: #C4A882;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  background: var(--bk);
+  color: var(--wh);
+  font-family: 'DM Mono', monospace;
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 28px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  mix-blend-mode: normal;
+}
+
+.nav-logo {
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--wh);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-logo span { color: var(--o); }
+
+.nav-right {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--sf);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-link:hover { color: var(--o); }
+
+/* ── SECTIONS ── */
+section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 56px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── HERO ── */
+.s-hero {
+  background: var(--bk);
+  padding: 0 56px;
+  justify-content: flex-end;
+  padding-bottom: 80px;
+}
+
+.hero-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 56px;
+  transform: translateY(-50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(120px, 18vw, 240px);
+  font-weight: 900;
+  color: rgba(216,80,10,0.04);
+  letter-spacing: -8px;
+  line-height: 1;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--o);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--o);
+}
+
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(56px, 8vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  color: var(--wh);
+  margin-bottom: 40px;
+}
+
+.hero-h1 em {
+  font-style: italic;
+  color: var(--o);
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--lk);
+  max-width: 480px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.scroll-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--sf);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  animation: scrollHint 2s ease-in-out infinite;
+}
+
+@keyframes scrollHint {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ── SECTION STYLE ── */
+.s-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: var(--o);
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.s-tag::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--o);
+}
+
+.s-h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(38px, 5vw, 72px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: var(--wh);
+  max-width: 820px;
+}
+
+.s-h2 em {
+  font-style: italic;
+  color: var(--o);
+}
+
+.s-h2 strong {
+  font-weight: 900;
+}
+
+.s-body {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--lk);
+  max-width: 560px;
+  margin-top: 32px;
+}
+
+.s-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--sf);
+  margin-top: 48px;
+}
+
+/* ── SECCIÓN 1 — DIGITALIZACIÓN ── */
+.s-dig {
+  background: var(--bk);
+}
+
+.s-dig-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  height: 100%;
+}
+
+.dig-visual {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: var(--bk);
+  border: 1px solid rgba(247,235,223,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dig-before-after {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4px 1fr;
+}
+
+.dig-before {
+  background: linear-gradient(135deg, #2A1A0E, #1A1008);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.dig-line {
+  background: var(--o);
+  position: relative;
+}
+
+.dig-line::after {
+  content: 'PIXELIA';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--bk);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.dig-after {
+  background: linear-gradient(135deg, #2A1208, #17120B);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.dig-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.dig-before .dig-label { color: rgba(247,235,223,0.3); }
+.dig-after .dig-label { color: var(--o); }
+
+.dig-val {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--lk);
+}
+
+/* ── SECCIÓN 2 — FOTOGRAFÍA ── */
+.s-foto {
+  background: var(--wh);
+}
+
+.s-foto .s-tag { color: var(--o); }
+.s-foto .s-tag::before { background: var(--o); }
+.s-foto .s-h2 { color: var(--bk); }
+.s-foto .s-body { color: #6B5A42; }
+.s-foto .s-note { color: #8A6A5A; }
+
+.foto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-top: 48px;
+}
+
+.foto-item {
+  background: var(--bk);
+  aspect-ratio: 3/4;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+}
+
+.foto-item-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--o);
+  text-transform: uppercase;
+}
+
+.foto-item-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--wh);
+  margin-top: 4px;
+}
+
+/* ── SECCIÓN 3 — HEYGEN ── */
+.s-hey {
+  background: var(--o);
+}
+
+.s-hey .s-tag {
+  color: var(--bk);
+  opacity: 0.5;
+}
+
+.s-hey .s-tag::before { background: var(--bk); opacity: 0.5; }
+.s-hey .s-h2 { color: var(--bk); }
+.s-hey .s-body { color: rgba(23,18,11,0.65); }
+
+.hey-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+.hey-cases {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hey-case {
+  background: rgba(23,18,11,0.08);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 3px solid rgba(23,18,11,0.15);
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.hey-case:hover {
+  border-color: var(--bk);
+  background: rgba(23,18,11,0.12);
+}
+
+.hey-case-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bk);
+}
+
+.hey-case-price {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: rgba(23,18,11,0.6);
+  letter-spacing: 1px;
+}
+
+.hey-note {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(23,18,11,0.55);
+  line-height: 1.6;
+}
+
+/* ── SECCIÓN 4 — PROCESO ── */
+.s-proceso {
+  background: var(--bk);
+}
+
+.proceso-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  margin-top: 64px;
+}
+
+.p-step {
+  padding: 40px 28px;
+  background: rgba(247,235,223,0.02);
+  border-top: 1px solid rgba(247,235,223,0.06);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.p-step:hover {
+  background: rgba(216,80,10,0.04);
+  border-color: var(--o);
+}
+
+.p-step-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: rgba(216,80,10,0.12);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.p-step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--wh);
+  margin-bottom: 10px;
+}
+
+.p-step-desc {
+  font-size: 13px;
+  color: var(--sf);
+  line-height: 1.7;
+}
+
+/* ── SECCIÓN 5 — CONTACTO ── */
+.s-contacto {
+  background: var(--wh);
+}
+
+.s-contacto .s-tag { color: var(--o); }
+.s-contacto .s-tag::before { background: var(--o); }
+.s-contacto .s-h2 { color: var(--bk); }
+
+.contacto-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 64px;
+}
+
+.contacto-left { }
+
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.ci {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(23,18,11,0.08);
+}
+
+.ci-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--o);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.ci-val {
+  font-size: 15px;
+  color: var(--bk);
+  line-height: 1.5;
+}
+
+/* FORM */
+.contacto-form { }
+
+.form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--bk);
+  margin-bottom: 4px;
+}
+
+.form-sub {
+  font-size: 13px;
+  color: #8A6A5A;
+  margin-bottom: 32px;
+  font-style: italic;
+}
+
+.fg { margin-bottom: 16px; }
+
+.fl {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--o);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.fi, .fsel, .fta {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(23,18,11,0.15);
+  color: var(--bk);
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  padding: 10px 0;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.fi:focus, .fsel:focus, .fta:focus {
+  border-color: var(--o);
+}
+
+.fi::placeholder, .fta::placeholder { color: rgba(23,18,11,0.3); }
+
+.fsel { cursor: pointer; color: rgba(23,18,11,0.4); -webkit-appearance: none; }
+.fsel option { color: var(--bk); background: var(--wh); }
+
+.fta { resize: none; min-height: 80px; }
+
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* CTA WHATSAPP */
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--wh);
+  background: var(--bk);
+  padding: 16px 32px;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: background 0.3s, color 0.3s;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-wa:hover {
+  background: var(--o);
+  color: var(--bk);
+}
+
+.btn-wa-icon { font-size: 18px; }
+
+.form-note {
+  font-size: 11px;
+  color: #8A6A5A;
+  text-align: center;
+  margin-top: 12px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 1px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #0D0A06;
+  padding: 60px 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  border-top: 1px solid rgba(247,235,223,0.04);
+}
+
+.footer-brand {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--wh);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.footer-brand span { color: var(--o); }
+
+.footer-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--sf);
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--sf);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(--o); }
+
+.footer-copy {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgba(138,106,90,0.4);
+  text-align: right;
+}
+
+/* ── LINE DIVIDER ── */
+.evo-divider {
+  height: 60px;
+  background: var(--bk);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.evo-track {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--o) 30%, var(--o) 70%, transparent);
+  position: relative;
+}
+
+.evo-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--o);
+  color: var(--bk);
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  padding: 6px 16px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── PROGRESS ── */
+.progress-bar {
+  position: fixed;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 50;
+}
+
+.pb-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(247,235,223,0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pb-dot.active {
+  background: var(--o);
+  height: 20px;
+  border-radius: 2px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 20px 24px; }
+  section { padding: 100px 24px 60px; }
+  .s-hero { padding: 0 24px 60px; }
+  .hero-h1 { font-size: 48px; letter-spacing: -2px; }
+  .hero-bg-text { display: none; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; }
+  .s-dig-layout { grid-template-columns: 1fr; }
+  .dig-visual { aspect-ratio: 16/9; }
+  .foto-grid { grid-template-columns: 1fr 1fr; }
+  .hey-layout { grid-template-columns: 1fr; }
+  .proceso-steps { grid-template-columns: 1fr 1fr; }
+  .contacto-layout { grid-template-columns: 1fr; }
+  footer { grid-template-columns: 1fr; gap: 32px; }
+  .footer-copy { text-align: left; }
+  .frow { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS -->
+<div class="progress-bar" id="progressBar">
+  <div class="pb-dot active" onclick="goTo(0)"></div>
+  <div class="pb-dot" onclick="goTo(1)"></div>
+  <div class="pb-dot" onclick="goTo(2)"></div>
+  <div class="pb-dot" onclick="goTo(3)"></div>
+  <div class="pb-dot" onclick="goTo(4)"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">PIX<span>E</span>LIA</a>
+  <div class="nav-right">
+    <a href="#s-dig" class="nav-link">Digitalización</a>
+    <a href="#s-foto" class="nav-link">Fotografía</a>
+    
+    <a href="#s-contacto" class="nav-link">Contacto</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="s-hero" id="s-hero">
+  <div class="hero-bg-text">PIXELIA</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Zibatá · Querétaro · México</div>
+    <h1 class="hero-h1">
+      Inteligencia<br>
+      <em>Visual</em><br>
+      aplicada.
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        Rescatamos y evolucionamos el patrimonio visual de las personas mediante la intersección entre la sensibilidad fotográfica y la precisión de la Inteligencia Artificial.
+      </p>
+      <div class="hero-cta">
+        <span class="scroll-hint">Scroll</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="evo-divider">
+  <div class="evo-track">
+    <div class="evo-label">La Línea de Evolución PIXELIA</div>
+  </div>
+</div>
+
+<!-- DIGITALIZACIÓN -->
+<section class="s-dig" id="s-dig">
+  <div class="s-dig-layout">
+    <div>
+      <div class="s-tag">Área 02 · Digitalización</div>
+      <h2 class="s-h2">
+        Lo que creías<br>
+        perdido,<br>
+        <em>PIXELIA</em><br>
+        lo devuelve.
+      </h2>
+      <p class="s-body">
+        VHS, negativos, diapositivas, fotos impresas. Escaneo industrial y restauración neuronal con Deep Learning. Tu pasado merece resolución de futuro.
+      </p>
+      <p class="s-note">
+        VHS desde $250 MXN · Negativos 35mm desde $380 MXN/rollo<br>
+        Restauración desde $500 MXN · Recolección a domicilio sin costo
+      </p>
+    </div>
+    <div class="dig-visual">
+      <div class="dig-before-after">
+        <div class="dig-before">
+          <div class="dig-label">Antes</div>
+          <div class="dig-val">Formato análogo</div>
+        </div>
+        <div class="dig-line"></div>
+        <div class="dig-after">
+          <div class="dig-label">Después</div>
+          <div class="dig-val">Alta fidelidad 4K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOTOGRAFÍA -->
+<section class="s-foto" id="s-foto">
+  <div class="s-tag">Área 01 · Fotografía</div>
+  <h2 class="s-h2">
+    Tu imagen habla<br>
+    antes de que tú<br>
+    <em>abras la boca.</em>
+  </h2>
+  <p class="s-body" style="color:#6B5A42">
+    Headshots, retratos de autor, fotografía de producto y sesiones familiares. Post-procesamiento inteligente en cada toma.
+  </p>
+  <div class="foto-grid">
+    <div class="foto-item" style="background-image:url('img/headshot.jpg');background-size:cover;background-position:center">
+      <div style="background:linear-gradient(to top,rgba(23,18,11,0.85),transparent);position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px">
+        <div class="foto-item-label">Headshot Premium</div>
+        <div class="foto-item-price">$2,500</div>
+      </div>
+    </div>
+    <div class="foto-item" style="background-image:url('img/producto.jpg');background-size:cover;background-position:center">
+      <div style="background:linear-gradient(to top,rgba(23,18,11,0.85),transparent);position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px">
+        <div class="foto-item-label">Pack Producto</div>
+        <div class="foto-item-price">$4,500</div>
+      </div>
+    </div>
+    <div class="foto-item" style="background-image:url('img/familiar.jpg');background-size:cover;background-position:center">
+      <div style="background:linear-gradient(to top,rgba(23,18,11,0.85),transparent);position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px">
+        <div class="foto-item-label">Sesión Familiar</div>
+        <div class="foto-item-price">$2,800</div>
+      </div>
+    </div>
+  </div>
+  <p class="s-note" style="color:#8A6A5A">Todos los precios en MXN · IVA no incluido · Precio de introducción</p>
+</section>
+
+<!-- PROCESO -->
+<section class="s-proceso" id="s-proceso">
+  <div class="s-tag">El proceso</div>
+  <h2 class="s-h2">
+    Una sola promesa.<br>
+    <em>Sin atajos.</em>
+  </h2>
+  <div class="proceso-steps">
+    <div class="p-step">
+      <div class="p-step-n">01</div>
+      <div class="p-step-title">Diagnóstico Visual</div>
+      <p class="p-step-desc">Evaluamos cada archivo antes de iniciar. Sin compromisos ciegos.</p>
+    </div>
+    <div class="p-step">
+      <div class="p-step-n">02</div>
+      <div class="p-step-title">Proceso PIXELIA</div>
+      <p class="p-step-desc">Digitalización, restauración neuronal y optimización con IA.</p>
+    </div>
+    <div class="p-step">
+      <div class="p-step-n">03</div>
+      <div class="p-step-title">Revisión Total</div>
+      <p class="p-step-desc">Verificamos cada entregable antes de que salga del estudio.</p>
+    </div>
+    <div class="p-step">
+      <div class="p-step-n">04</div>
+      <div class="p-step-title">Entrega Ritual</div>
+      <p class="p-step-desc">Certificado de Autenticidad · Archivos en nube o USB.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="s-contacto" id="s-contacto">
+  <div class="s-tag">Hablemos</div>
+  <h2 class="s-h2">
+    Una pieza no se<br>
+    pide en un carrito.<br>
+    <em>Se conversa.</em>
+  </h2>
+  <div class="contacto-layout">
+    <div class="contacto-left">
+      <div class="contacto-info">
+        <div class="ci">
+          <div class="ci-label">Estudio</div>
+          <div class="ci-val">Zibatá, Querétaro, México</div>
+        </div>
+        <div class="ci">
+          <div class="ci-label">Horario</div>
+          <div class="ci-val">Lunes a Viernes · 10:00 AM – 6:00 PM<br>Sábado · 10:00 AM – 3:00 PM</div>
+        </div>
+        <div class="ci">
+          <div class="ci-label">Respuesta</div>
+          <div class="ci-val">Menos de 2 horas en horario de operación</div>
+        </div>
+        <div class="ci">
+          <div class="ci-label">Recolección</div>
+          <div class="ci-val">Sin costo en Zibatá y zona de influencia</div>
+        </div>
+      </div>
+      <a href="https://wa.me/524420000000?text=Hola%20PIXELIA,%20vi%20el%20sitio%20y%20quiero%20más%20información." class="btn-wa" target="_blank">
+        <span class="btn-wa-icon">📱</span>
+        Escribir por WhatsApp
+      </a>
+    </div>
+    <div class="contacto-form">
+      <div class="form-title">Cotiza tu proyecto</div>
+      <div class="form-sub">Te contactamos en menos de 2 horas.</div>
+      <form id="px-form" onsubmit="pxSubmit(event)">
+        <div class="frow">
+          <div class="fg"><label class="fl">Nombre</label><input type="text" class="fi" placeholder="Tu nombre" required></div>
+          <div class="fg"><label class="fl">WhatsApp</label><input type="tel" class="fi" placeholder="442 000 0000" required></div>
+        </div>
+        <div class="fg"><label class="fl">¿Qué necesitas?</label>
+          <select class="fi fsel" required>
+            <option value="" disabled selected>Selecciona</option>
+            <option>Fotografía de estudio</option>
+            <option>Digitalización de VHS</option>
+            <option>Escaneo de negativos / fotos</option>
+            <option>Restauración con IA</option>
+            <option>Contenido IA mensual</option>
+            <option>Videos HeyGen</option>
+            <option>Renta de estudio</option>
+            <option>Varios / no estoy seguro/a</option>
+          </select>
+        </div>
+        <div class="fg"><label class="fl">Cuéntanos más</label><textarea class="fi fta" placeholder="¿Cuántas cintas? ¿Para qué fecha?..."></textarea></div>
+        <button type="submit" class="btn-wa" style="border:none;cursor:pointer;font-family:inherit">
+          Solicitar cotización →
+        </button>
+        <p class="form-note">Sin spam · Sin compromiso</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">PIX<span>E</span>LIA</div>
+    <p class="footer-tagline">"La unión perfecta entre la nostalgia del pasado y la nitidez del futuro."</p>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#s-dig">Digitalización</a></li>
+    <li><a href="#s-foto">Fotografía</a></li>
+    <li><a href="#s-proceso">El proceso</a></li>
+    <li><a href="#s-contacto">Contacto</a></li>
+  </ul>
+  <div class="footer-copy">
+    © 2025 PIXELIA · Inteligencia Visual<br>
+    Querétaro, México
+  </div>
+</footer>
+
+<script>
+// Scroll progress dots
+const sections = ['s-hero','s-dig','s-foto','s-proceso','s-contacto'];
+const dots = document.querySelectorAll('.pb-dot');
+
+function goTo(i) {
+  const el = document.getElementById(sections[i]);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const i = sections.indexOf(entry.target.id);
+      if (i >= 0) {
+        dots.forEach((d, j) => d.classList.toggle('active', i === j));
+      }
+    }
+  });
+}, { threshold: 0.5 });
+
+sections.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) observer.observe(el);
+});
+
+// Form submit
+function pxSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]');
+  btn.textContent = '✓ Mensaje enviado — te contactamos pronto';
+  btn.style.background = '#2A1A0E';
+  setTimeout(() => {
+    btn.textContent = 'Solicitar cotización →';
+    btn.style.background = '';
+    e.target.reset();
+  }, 4000);
+}
+</script>
+</body>
+</html>

@@ -741,7 +741,9 @@ footer {
 @media (max-width: 768px) {
   nav { padding: 20px 24px; }
   section { padding: 100px 24px 60px; }
-  .s-hero { padding: 0 24px 60px; }
+  .s-hero { grid-template-columns: 1fr !important; }
+  .s-hero > div:last-child { min-height: 300px !important; }
+  .s-hero > div:first-child { padding: 100px 24px 60px !important; }
   .hero-h1 { font-size: 48px; letter-spacing: -2px; }
   .hero-bg-text { display: none; }
   .hero-bottom { flex-direction: column; align-items: flex-start; }
@@ -780,7 +782,8 @@ footer {
 </nav>
 
 <!-- HERO -->
-<section class="s-hero" id="s-hero">
+<section class="s-hero" id="s-hero" style="display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;min-height:100vh">
+  <div style="display:flex;flex-direction:column;justify-content:flex-end;padding:100px 56px 80px;position:relative;">
   <div class="hero-bg-text">PIXELIA</div>
   <div class="hero-content">
     <div class="hero-eyebrow">Zibatá · Querétaro · México</div>
@@ -796,6 +799,14 @@ footer {
       <div class="hero-cta">
         <span class="scroll-hint">Scroll</span>
       </div>
+    </div>
+  </div>
+  </div>
+  <div style="background-image:url('restauracion fotografica.jpeg');background-size:cover;background-position:center;position:relative;min-height:100vh;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(23,18,11,0.4),transparent);"></div>
+    <div style="position:absolute;bottom:40px;left:32px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:rgba(247,235,223,0.5);text-transform:uppercase;margin-bottom:4px;">Restauración neuronal</div>
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:#D8500A;letter-spacing:2px;">Deep Learning · Alta fidelidad</div>
     </div>
   </div>
 </section>
@@ -854,19 +865,19 @@ footer {
     Headshots, retratos de autor, fotografía de producto y sesiones familiares. Post-procesamiento inteligente en cada toma.
   </p>
   <div class="foto-grid">
-    <div class="foto-item" style="background-image:url('img/headshot.jpg');background-size:cover;background-position:center">
+    <div class="foto-item" style="background-image:url('headshot.jpeg');background-size:cover;background-position:center">
       <div style="background:linear-gradient(to top,rgba(23,18,11,0.85),transparent);position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px">
         <div class="foto-item-label">Headshot Premium</div>
         <div class="foto-item-price">$2,500</div>
       </div>
     </div>
-    <div class="foto-item" style="background-image:url('img/producto.jpg');background-size:cover;background-position:center">
+    <div class="foto-item" style="background-image:url('producto.jpg');background-size:cover;background-position:center">
       <div style="background:linear-gradient(to top,rgba(23,18,11,0.85),transparent);position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px">
         <div class="foto-item-label">Pack Producto</div>
         <div class="foto-item-price">$4,500</div>
       </div>
     </div>
-    <div class="foto-item" style="background-image:url('img/familiar.jpg');background-size:cover;background-position:center">
+    <div class="foto-item" style="background-image:url('familiar.jpg');background-size:cover;background-position:center">
       <div style="background:linear-gradient(to top,rgba(23,18,11,0.85),transparent);position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px">
         <div class="foto-item-label">Sesión Familiar</div>
         <div class="foto-item-price">$2,800</div>
